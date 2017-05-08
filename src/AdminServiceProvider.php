@@ -13,6 +13,11 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Config publish
+        $this->publishes([
+            __DIR__ . '/config' => config_path('adminlite'),
+        ]);
+
         // Views publish
         $this->loadViewsFrom(__DIR__.'/views', 'adminlite');
         $this->publishes([
@@ -23,7 +28,6 @@ class AdminServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/assets' => public_path('vendor/adminlite'),
         ], 'adminlite');
-
     }
 
     /**
@@ -33,6 +37,8 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(
+            __DIR__ . '/config/main.php', 'adminlite'
+        );
     }
 }

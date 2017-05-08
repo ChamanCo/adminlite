@@ -11,10 +11,4 @@
   "require": {
     "php": ">=5.6.4"
   },
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/",
-      "Emile442\\AdminLite\\": "packages/emile442/adminlite/src"
-    }
-  }
 }
