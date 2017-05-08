@@ -1,0 +1,1 @@
+@extends('adminlite::layouts.app')
