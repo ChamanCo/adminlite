@@ -22,12 +22,12 @@ class AdminServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/views', 'adminlite');
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/emile442/adminlite'),
-        ]);
+        ], 'views');
 
         // Assets publish
         $this->publishes([
             __DIR__.'/assets' => public_path('vendor/adminlite'),
-        ], 'adminlite');
+        ], 'assets');
     }
 
     /**
