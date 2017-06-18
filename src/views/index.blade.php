@@ -5,110 +5,42 @@
         <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="card card-stats">
                 <div class="card-header" data-background-color="orange">
-                    <i class="material-icons">content_copy</i>
+                    <i class="material-icons">supervisor_account</i>
                 </div>
                 <div class="card-content">
-                    <p class="category">Used Space</p>
-                    <h3 class="title">49/50<small>GB</small></h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons text-danger">warning</i> <a href="#pablo">Get More Space...</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header" data-background-color="green">
-                    <i class="material-icons">store</i>
-                </div>
-                <div class="card-content">
-                    <p class="category">Revenue</p>
-                    <h3 class="title">$34,245</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">date_range</i> Last 24 Hours
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header" data-background-color="red">
-                    <i class="material-icons">info_outline</i>
-                </div>
-                <div class="card-content">
-                    <p class="category">Fixed Issues</p>
-                    <h3 class="title">75</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">local_offer</i> Tracked from Github
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-                <div class="card-header" data-background-color="blue">
-                    <i class="fa fa-twitter"></i>
-                </div>
-                <div class="card-content">
-                    <p class="category">Followers</p>
-                    <h3 class="title">+245</h3>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons">update</i> Just Updated
-                    </div>
+                    <p class="category">Utilisateurs</p>
+                    <h3 class="title">{{ \App\User::count() }}</h3>
                 </div>
             </div>
         </div>
     </div>
 
+    @include('adminlite::layouts.flash')
+
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-header" data-background-color="orange">
-                    <h4 class="title">Employees Stats</h4>
-                    <p class="category">New employees on 15th September, 2016</p>
+                    <h4 class="title">Utilisateurs</h4>
+                    <p class="category">Voir tous les <a href="{{ route('admin.users') }}">Utilateurs</a></p>
                 </div>
                 <div class="card-content table-responsive">
                     <table class="table table-hover">
                         <thead class="text-warning">
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Salary</th>
-                        <th>Country</th>
+                            <th>ID</th>
+                            <th>Pseudo</th>
+                            <th>E-mail</th>
+                            <th>Date de création</th>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Dakota Rice</td>
-                            <td>$36,738</td>
-                            <td>Niger</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Minerva Hooper</td>
-                            <td>$23,789</td>
-                            <td>Curaçao</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Sage Rodriguez</td>
-                            <td>$56,142</td>
-                            <td>Netherlands</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Philip Chaney</td>
-                            <td>$38,735</td>
-                            <td>Korea, South</td>
-                        </tr>
+                            @foreach($users as $user)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td> {{ $user->created_at }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

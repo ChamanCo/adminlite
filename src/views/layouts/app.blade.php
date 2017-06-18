@@ -29,14 +29,7 @@
         </div>
 
         <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li class="active">
-                    <a href="{{ url('admin') }}">
-                        <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-            </ul>
+            @include('adminlite::layouts.sidebard')
         </div>
     </div>
     <div class="main-panel">
@@ -49,19 +42,24 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Admin Dashboard</a>
+                    <a class="navbar-brand" href="#">@yield('title', 'Admin Dashboard')</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="material-icons">exit_to_app</i>
-                                <p class="hidden-lg hidden-md">Déconnexion</p>
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="text-danger">
+                                <p class="text-danger">Déconnexion</p>
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
+                        </li>
+
+                        <li>
+                            <a href="{{ url('/')  }}" class="text-info">
+                                <p class="text-info">Retour au site</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
