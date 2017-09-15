@@ -8,11 +8,11 @@ AdminTemplate Lite Version for Laravel 5
 
 * In your shell:
 ```
-    composer require emile442/adminlite 
+    composer require chamanco/adminlite 
 ```
 * Add in your config/app.php: 
 ```php
-    Emile442\AdminLite\AdminServiceProvider::class
+    ChamanCo\AdminLite\AdminServiceProvider::class
 ```
 * After publish vendor: 
 ```
