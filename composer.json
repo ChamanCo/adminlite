@@ -1,10 +1,14 @@
 {
-  "name": "emile442/adminlite",
+  "name": "chamanco/adminlite",
   "description": "AdminTemplate Lite Version for Laravel 5",
   "authors": [
     {
       "name": "Emile LEPETIT",
       "email": "emile.lepetit@gmail.com"
+    },
+    {
+      "name": "Florian MORENO",
+      "email": "contact@florianmoreno.fr"
     }
   ],
   "minimum-stability": "dev",
@@ -13,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Emile442\\AdminLite\\": "src/"
+      "ChamanCo\\AdminLite\\": "src/"
     }
   }
 }

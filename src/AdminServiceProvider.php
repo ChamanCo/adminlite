@@ -1,6 +1,6 @@
 <?php
 
-namespace Emile442\AdminLite;
+namespace ChamanCo\AdminLite;
 
 use Illuminate\Support\ServiceProvider;
 
