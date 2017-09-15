@@ -1,5 +1,6 @@
 {
   "name": "chamanco/adminlite",
+  "version": 0.2,
   "description": "AdminTemplate Lite Version for Laravel 5",
   "authors": [
     {
