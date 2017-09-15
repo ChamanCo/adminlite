@@ -21,7 +21,7 @@ class AdminServiceProvider extends ServiceProvider
         // Views publish
         $this->loadViewsFrom(__DIR__.'/views', 'adminlite');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/emile442/adminlite'),
+            __DIR__.'/views' => base_path('resources/views/chamanco/adminlite'),
         ], 'views');
 
         // Assets publish
